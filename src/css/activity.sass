@@ -1,0 +1,167 @@
+@import "./base.sass"
+@import "./header.sass"
+@import "./footer.sass"
+
+.section
+  .select-list
+    display: flex
+    justify-content: center
+    border-bottom: 1px solid #ECEEEE
+    .select
+      position: relative
+      display: flex
+      justify-content: space-between
+      align-items: center
+      width: 20%
+      max-width: 160px
+      padding: 20px 10px
+      margin: 0 30px -1px
+      font-size: 14px
+      color: #9A9A9A
+      &::after
+        position: absolute
+        bottom: 0
+        left: 0
+        content: ''
+        width: 100%
+        height: 1px
+        background: #445658
+      &:hover
+        .box
+          display: block
+      .icon
+        width: 10px
+        height: 8px
+      .box
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 3
+        display: none
+        width: 100%
+        padding: 10px 0
+        background: #FFFFFF
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10)
+        .list
+          display: flex
+          justify-content: space-between
+          align-items: center
+          padding: 10px
+          cursor: pointer
+          &.active
+            background: #F9F9F9
+            color: #445658
+          .icon
+            transform: rotate(180deg)
+  .list-wrapper
+    .list
+      display: flex
+      margin-top: 40px
+      padding: 0 10%
+      box-sizing: border-box
+      border-bottom: 1px solid #ECEEEE
+      .img
+        flex-shrink: 0
+        width: 200px
+        height: 132px
+        margin-right: 20px
+        margin-bottom: -1px
+        padding-bottom: 40px
+        border-bottom: 1px solid #445658
+      .right-box
+        flex: auto
+        max-width: 70%
+      .header, .content
+        display: flex
+      .header
+        align-items: center
+        .title
+          margin: 0
+          font-size: 18px
+          color: #1C1E27
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+        .level, .type
+          flex-shrink: 0
+          margin-left: 10px
+          padding-left: 10px
+          border-left: 2px solid #ECEEEE
+          line-height: 10px
+          font-size: 12px
+        .level
+          color: #DC6161
+        .type
+          color: #67AFB8
+      .content
+        position: relative
+        padding-right: 80px
+        ul
+          margin-right: 40px
+          li
+            margin: 10px 0
+            font-size: 14px
+            color: #1C1E27
+        .button
+          position: absolute
+          right: 0
+          top: 50%
+          transform: translateY(-50%)
+          display: flex
+          align-items: center
+          padding: 3px 10px
+          border: 2px solid #445658
+          border-radius: 5px
+          color: #445658
+          &.end
+            color: #A1AAAB
+            border-color: #A1AAAB
+          .icon
+            width: 16px
+            height: 14px
+            margin-right: 5px
+
+.page
+  display: flex
+  justify-content: center
+  margin: 40px 0
+  .list
+    margin: 0 15px
+    font-size: 14px
+    a
+      color: #A1AAAB
+    &.active
+      a
+        color: #445658
+        text-decoration: underline
+
+@media (max-width: 480px)
+  .section
+    .select-list
+      justify-content: space-around
+      .select
+        margin: 0 0 -1px 0
+    .list-wrapper
+      .list
+        flex-direction: column
+        align-items: center
+        .img
+          padding-bottom: 10px
+          border-bottom: none
+        .right-box
+          max-width: 100%
+        .header
+          flex-wrap: wrap
+          .title
+            margin: 10px 0
+            white-space: normal
+        .content
+          flex-direction: column
+          padding-right: 0
+          ul
+            margin: 0
+          .button
+            position: relative
+            transform: translateY(0)
+            width: fit-content
+            margin: 10px auto

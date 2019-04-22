@@ -1,0 +1,136 @@
+@import "./base.sass"
+@import "./header.sass"
+@import "./footer.sass"
+
+#banner
+  padding: 0 10%
+  .wrapper
+    position: relative
+    overflow: hidden
+    .img1
+      width: 100%
+      transform: translateY(-100%)
+    .img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      opacity: 0
+      transition: opacity 2s
+    .arrow
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      width: 20px
+      height: 50px
+      //background: #1C1E27
+      cursor: pointer
+      &.left
+        left: 20px
+      &.right
+        right: 20px
+    .dots
+      position: absolute
+      bottom: 40px
+      left: 50%
+      transform: translateX(-50%)
+      .dot
+        float: left
+        width: 50px
+        height: 3px
+        margin: 0 5px
+        background: #ffffff
+        opacity: 0.5
+        transition: opacity 2s
+
+.section
+  position: relative
+  display: flex
+  padding: 0 10%
+  margin-top: 20px
+  .hr
+    position: absolute
+    left: 0
+    top: 18px
+    width: 100%
+    height: 1px
+    border: none
+    background-color: #ECEEEE
+  .wrapper
+    .title
+      position: relative
+      padding: 0 3px 5px 18px
+      &::before
+        position: absolute
+        top: 3px
+        left: 0
+        content: ''
+        width: 4px
+        height: 16px
+        background: #445658
+      &::after
+        position: absolute
+        bottom: 0
+        left: 0
+        content: ''
+        width: 100%
+        height: 1px
+        background: #445658
+    .more
+      display: block
+      margin-bottom: 30px
+      .icon
+        width: 14px
+        height: 12px
+    ul
+      margin-top: 40px
+    .list > .link
+      display: flex
+      min-height: 72px
+      margin: 15px 0
+      .img
+        flex-shrink: 0
+        width: 100px
+        height: 66px
+        margin-right: 10px
+      .right
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+      .content, info
+        margin: 0
+      .content
+        font-family: PingFangSC-Medium
+        font-size: 16px
+        color: #1C1E27
+        line-height: 24px
+      .info
+        display: flex
+        justify-content: space-between
+        margin: 3px 0 0
+        .address, .time
+          color: #9a9a9a
+          font-size: 14px
+        .time
+          flex: auto
+          text-align: right
+  .wrapper2
+    margin: 0 20px
+
+@media (max-width: 1024px)
+  .section
+    .wrapper
+      .list > .link
+        flex-direction: column
+        align-items: center
+
+@media (max-width: 480px)
+  .section
+    flex-direction: column
+    .wrapper
+      .list > .link
+        flex-direction: row
+        align-items: flex-start
+    .wrapper2
+      margin: 0
